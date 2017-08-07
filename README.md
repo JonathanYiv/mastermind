@@ -1,9 +1,8 @@
 # Mastermind Project
 
-From [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop).
+Check out my command line version of the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) bult with Ruby!
 
-Build a Mastermind game from the command line.
-See the [Wikipedia Entry on Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game) if you don't know what it is.
+This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop).
 
 ![Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)#/media/File:Mastermind.jpg)
 
@@ -57,8 +56,6 @@ class Computer
 		algorithms to solve mastermind
 ```
 	
-
-
 
 
 ## Final Thoughts (Post-Project)
