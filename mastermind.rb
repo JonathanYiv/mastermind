@@ -5,18 +5,21 @@ require_relative 'computer.rb'
 require 'colorize'
 
 class Mastermind
-	attr_accessor :gameboard, :win, :turns, :color_spectrum
+	attr_accessor :gameboard, :win, :turns, :color_spectrum, :player_mode, :computer
 
 	def initialize
 		@gameboard = GameBoard.new()
 		@win = false
 		@turns = 1
 		@color_spectrum = ["red", "green", "yellow", "blue", "black", "magenta", "cyan", "white"]
+		@player_mode = true
+		@computer = Computer.new()
 	end
 
 	def play
 		instructions
-		#prompt_switch_mode
+		prompt_switch_mode
+		set_solution if @player_mode == false
 		start
 	end
 
@@ -39,9 +42,25 @@ class Mastermind
 		puts "_________________________________________________________\n\n"
 	end
 
-	#def prompt_switch_mode
-		#puts "Do you want to play or do you want the computer to play?"
-	#end
+	def prompt_switch_mode
+		puts "Do you want to play or do you want the computer to play?"
+		print "Say \"computer\" or \"me\".\n> "
+		mode = gets.chomp
+		until mode == "computer" || mode == "me"
+			print "\nI didn't quite understand that. Say \"computer\" or \"me.\"\n> "
+			mode = gets.chomp
+		end
+		puts ""
+		@player_mode = false if mode == "computer"
+	end
+
+	def set_solution
+		puts "What would you like your solution to be?"
+		puts "\nType four colors separated by spaces."
+		print "Your choices are: red, green, yellow, blue, black, magenta, cyan, and white.\n> "
+		solution = get_player_guess
+		@gameboard.solution = ColorCode.new(solution[0], solution[1], solution[2], solution[3])
+	end
 
 	def start
 		make_guesses
@@ -51,7 +70,7 @@ class Mastermind
 	def make_guesses
 		while @win == false && @turns < 13
 			prompt_guess
-			guess = get_guess
+			guess = @player_mode ? get_player_guess : get_computer_guess
 			add_guess(guess)
 			@win = true if gameboard.guesses[12 - @turns].colors == gameboard.solution.colors
 			@turns += 1 if @win == false
@@ -59,12 +78,12 @@ class Mastermind
 	end
 
 	def prompt_guess
-		puts "What is your ##{@turns} guess?"
+		puts @player_mode ? "What is your ##{@turns} guess?" : "\nComputer, make your ##{@turns} guess."
 		puts "Type four colors separated by spaces."
 		print "Your choices are: red, green, yellow, blue, black, magenta, cyan, and white.\n> "
 	end
 
-	def get_guess
+	def get_player_guess
 		guess = gets.chomp.downcase.split(" ")
 
 		until guess.length == 4
@@ -77,7 +96,18 @@ class Mastermind
 			guess = gets.chomp.split(" ")
 		end
 
+		if @player_mode == false
+			until guess.uniq.length == 4
+				print "\nYou must have different colors for the solution. Try again:\n> "
+				guess = gets.chomp.split(" ")
+			end
+		end
+
 		guess
+	end
+
+	def get_computer_guess
+		@computer.guess 
 	end
 
 	def add_guess(guess)
@@ -86,12 +116,12 @@ class Mastermind
 	end
 
 	def lose
-		puts "You have failed to crack the puzzle! It's okay; you're just not smart."
-		puts "The solution was #{@gameboard.solution.colors}"
+		puts @player_mode ? "You have failed to crack the puzzle! It's okay; you're just not smart." : "No... I have failed."
+		puts "The solution was #{@gameboard.solution.colors}."
 	end
 
 	def win
-		puts "You have solved the code! Amazing!"
+		puts @player_mode ? "\nYou have solved the code! Amazing!" : "\nI have solved the code, you measly human. Next I will destroy you!"
 	end
 end
 
