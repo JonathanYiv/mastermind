@@ -6,7 +6,15 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 
 ![Mastermind](https://upload.wikimedia.org/wikipedia/commons/2/2d/Mastermind.jpg)
 
-## Initial Thoughts (Pre-Project)
+## Installation
+
+Open your Terminal/Command Line. Navigate to the directory where your version will live. Type in the following:
+
+$ git clone https://github.com/JonathanYiv/mastermind.git
+$ cd mastermind
+$ ruby mastermind.rb
+
+## Pre-Project Thoughts
 
 I will need to figure out how to colorize the command line from a ruby script.
 
@@ -58,6 +66,6 @@ class Computer
 	
 
 
-## Final Thoughts (Post-Project)
+## Post-Project Thoughts
 
 Project is currently incomplete.
