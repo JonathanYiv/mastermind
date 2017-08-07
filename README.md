@@ -10,9 +10,11 @@ This is a project from [The Odin Project](https://www.theodinproject.com/courses
 
 Open your Terminal/Command Line. Navigate to the directory where your version will live. Type in the following:
 
+```
 $ git clone https://github.com/JonathanYiv/mastermind.git
 $ cd mastermind
 $ ruby mastermind.rb
+```
 
 ## Pre-Project Thoughts
 
