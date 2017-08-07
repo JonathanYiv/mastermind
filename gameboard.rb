@@ -1,5 +1,4 @@
 require 'colorize'
-# red, green, yellow, blue, black, magenta, cyan, white
 
 class GameBoard
 	attr_accessor :solution, :guesses, :hints

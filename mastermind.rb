@@ -3,7 +3,6 @@ require_relative 'colorcode.rb'
 require_relative 'hint.rb'
 require_relative 'computer.rb'
 require 'colorize'
-# red, green, yellow, blue, black, magenta, cyan, white
 
 class Mastermind
 	attr_accessor :gameboard, :win, :turns, :color_spectrum
@@ -17,6 +16,7 @@ class Mastermind
 
 	def play
 		instructions
+		#prompt_switch_mode
 		start
 	end
 
@@ -38,6 +38,10 @@ class Mastermind
 		puts "\nGood luck!"
 		puts "_________________________________________________________\n\n"
 	end
+
+	#def prompt_switch_mode
+		#puts "Do you want to play or do you want the computer to play?"
+	#end
 
 	def start
 		make_guesses

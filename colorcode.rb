@@ -1,5 +1,4 @@
 require 'colorize'
-# red, green, yellow, blue, black, magenta, cyan, white
 
 class ColorCode
 	attr_accessor :colors, :selected_colors
