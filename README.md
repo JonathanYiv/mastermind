@@ -4,7 +4,7 @@ Check out my command line version of the game [Mastermind](https://en.wikipedia.
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop).
 
-![Mastermind](https://upload.wikimedia.org/wikipedia/commons/2/2d/Mastermind.jpg)
+![Mastermind](/mastermind.png)
 
 ## Installation
 
