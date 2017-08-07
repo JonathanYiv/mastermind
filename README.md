@@ -1,10 +1,10 @@
 # Mastermind Project
 
-Check out my command line version of the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) bult with Ruby!
+Check out my command line version of the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) built with Ruby!
 
 This is a project from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop).
 
-![Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)#/media/File:Mastermind.jpg)
+![Mastermind](https://upload.wikimedia.org/wikipedia/commons/2/2d/Mastermind.jpg)
 
 ## Initial Thoughts (Pre-Project)
 
