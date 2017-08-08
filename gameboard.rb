@@ -20,7 +20,7 @@ class GameBoard
 		display
 	end
 
-	def evaluate(row_index)
+	def evaluate(row_index) # this method should probably be broken into more pieces
 		
 		correct_colors = 0
 		@guesses[row_index].colors.each_with_index { |color, index| correct_colors += 1 if @solution.colors[index] == color }

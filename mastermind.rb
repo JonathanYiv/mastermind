@@ -107,7 +107,7 @@ class Mastermind
 	end
 
 	def get_computer_guess
-		@computer.guess 
+		@computer.guess(@gameboard.hints, @turns)
 	end
 
 	def add_guess(guess)
