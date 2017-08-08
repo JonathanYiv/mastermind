@@ -13,6 +13,7 @@ Open your Terminal/Command Line. Navigate to the directory where your version wi
 ```
 $ git clone https://github.com/JonathanYiv/mastermind.git
 $ cd mastermind
+$ bundle install
 $ ruby mastermind.rb
 ```
 
@@ -96,6 +97,12 @@ end
 
 2. The computer AI was rather complex to implement; I spent the most time on that portion specifically. I only managed to get it to a 20% win-rate for now. I may come back later and update it when I am more knowledgeable.
 
-3. My last project, [Tic-Tac-Toe](https://github.com/JonathanYiv/tic-tac-toe) followed poor practices regarding separating classes into different files. This project does better in that regard. However, several methods are overly complex and have too much responsibility. There are also several incredibly long lines that are difficult to read that I am not proud of. I plan to come back and refactor the project when I am more knowledgeable.
+3. My last project, [Tic-Tac-Toe](https://github.com/JonathanYiv/tic-tac-toe) followed poor practices regarding separating classes into different files. This project does better in that regard. However, several methods are overly complex and have too much responsibi
 
-4. Overall, it was a very fun project, probably the most complex for me to date.
+4. @benjaminapetersen found two issues. 
+
+	1. The text sanitizer only ran each check once, so if you passed the first test but failed the second test, it would only check for the second test onwards. I fixed it by pulling it all into a large loop with redo statements if tests fail.
+
+	2. The project requires the gem 'colorize' which I had not previously set up for users, causing an error. I set up a Gemfile and added an instruction with bundler in the installation instructions.
+
+5. Overall, it was a very fun project, probably the most complex for me to date.

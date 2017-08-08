@@ -46,17 +46,7 @@ class GameBoard
 	def colorize(set, is_color_code)
 		colors = []
 		text = is_color_code ? "O" : "."
-		set.colors.each { |color| case color
-								  when "red" then colors.push(text.red)
-								  when "green" then colors.push(text.green)
-								  when "yellow" then colors.push(text.yellow)
-								  when "blue" then colors.push(text.blue)
-								  when "black" then colors.push(text.black)
-								  when "magenta" then colors.push(text.magenta)
-								  when "cyan" then colors.push(text.cyan)
-								  when "white" then colors.push(text.white)
-								  end
-						}
+		set.colors.each { |color| colors.push(text.public_send(color.to_sym)) }
 		colors.join(" ")
 	end
 end

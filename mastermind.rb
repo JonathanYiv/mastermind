@@ -1,8 +1,9 @@
+require 'colorize'
 require_relative 'gameboard.rb'
 require_relative 'colorcode.rb'
 require_relative 'hint.rb'
 require_relative 'computer.rb'
-require 'colorize'
+
 
 class Mastermind
 	attr_accessor :gameboard, :win, :turns, :color_spectrum, :player_mode, :computer
@@ -84,27 +85,30 @@ class Mastermind
 	end
 
 	def get_player_guess
-		guess = gets.chomp.downcase.split(" ")
+		1.times do
+			guess = gets.chomp.downcase.split(" ")
 
-		until guess.length == 4
-			print "\nYou entered the wrong amount of colors! Try again:\n> "
-			guess = gets.chomp.split(" ")
-		end
-
-		until @color_spectrum.include?(guess[0]) && @color_spectrum.include?(guess[1]) && @color_spectrum.include?(guess[2]) && @color_spectrum.include?(guess[3])
-			print "\nYou can only enter the colors specified! Try again:\n> "
-			guess = gets.chomp.split(" ")
-		end
-
-		if @player_mode == false
-			until guess.uniq.length == 4
-				print "\nYou must have different colors for the solution. Try again:\n> "
-				guess = gets.chomp.split(" ")
+			if guess.length != 4
+				print "\nYou entered the wrong amount of colors! Try again:\n> "
+				redo
 			end
-		end
 
-		guess
+			if !@color_spectrum.include?(guess[0]) || !@color_spectrum.include?(guess[1]) || !@color_spectrum.include?(guess[2]) || !@color_spectrum.include?(guess[3])
+				print "\nYou can only enter the colors specified! Try again:\n> "
+				redo
+			end
+
+			if @player_mode == false
+				if guess.uniq.length !=4
+					print "\nYou must have different colors for the solution. Try again:\n> "
+					redo
+				end
+			end
+
+			return guess
+		end
 	end
+
 
 	def get_computer_guess
 		@computer.guess(@gameboard.hints, @turns)
