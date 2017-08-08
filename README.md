@@ -94,7 +94,7 @@ class String
 end
 ```
 
-2. The computer AI was rather complex to implement; I spent the most time on that portion specifically. I only managed to get it to a 20% win-rate for now. I may come back later and update it when I am more knowledgeable.
+2. The computer AI was rather complex to implement; I spent the most time on that portion specifically. I only managed to get it to a 20% win-rate for now. I will come back and update it later with the [wikipedia supplied algorithm](https://en.wikipedia.org/wiki/Mastermind_(board_game)#Five-guess_algorithm) that guarantees a solution in five moves.
 
 3. My last project, [Tic-Tac-Toe](https://github.com/JonathanYiv/tic-tac-toe) followed poor practices regarding separating classes into different files. This project does better in that regard. However, several methods are overly complex and have too much responsibility. There are also several incredibly long lines that are difficult to read that I am not proud of. I plan to come back and refactor the project when I am more knowledgeable.
 
