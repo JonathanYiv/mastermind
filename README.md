@@ -70,8 +70,6 @@ class Computer
 
 ## Post-Project Thoughts
 
-Project is currently incomplete.
-
 1. To include color in the project, I found the ruby gem "colorize." I also read about ANSI Escape Codes [(see below)](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors) which were a little too intense for the scope of this project. See below.
 
 ```ruby
@@ -96,3 +94,8 @@ class String
 end
 ```
 
+2. The computer AI was rather complex to implement; I spent the most time on that portion specifically. I only managed to get it to a 20% win-rate for now. I may come back later and update it when I am more knowledgeable.
+
+3. My last project, [Tic-Tac-Toe](https://github.com/JonathanYiv/tic-tac-toe) followed poor practices regarding separating classes into different files. This project does better in that regard. However, several methods are overly complex and have too much responsibility. There are also several incredibly long lines that are difficult to read that I am not proud of. I plan to come back and refactor the project when I am more knowledgeable.
+
+4. Overall, it was a very fun project, probably the most complex for me to date.
