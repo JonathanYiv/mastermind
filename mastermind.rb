@@ -1,4 +1,3 @@
-require 'colorize'
 require_relative 'gameboard.rb'
 require_relative 'colorcode.rb'
 require_relative 'hint.rb'

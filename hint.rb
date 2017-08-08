@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Hint
 	attr_accessor :colors
 

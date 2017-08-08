@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Computer
 	attr_accessor :color_spectrum, :guess_set, :correct_colors
 

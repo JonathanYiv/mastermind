@@ -1,5 +1,3 @@
-require 'colorize'
-
 class ColorCode
 	attr_accessor :colors, :selected_colors
 
