@@ -98,4 +98,6 @@ end
 
 3. My last project, [Tic-Tac-Toe](https://github.com/JonathanYiv/tic-tac-toe) followed poor practices regarding separating classes into different files. This project does better in that regard. However, several methods are overly complex and have too much responsibility. There are also several incredibly long lines that are difficult to read that I am not proud of. I plan to come back and refactor the project when I am more knowledgeable.
 
-4. Overall, it was a very fun project, probably the most complex for me to date.
+4. Also, apparently Ruby has a syntax of two spaces per indent. I went ahead and adjusted my text editor's settings to reflect this, so all future ruby files will be indented accordingly.
+
+5. Overall, it was a very fun project, probably the most complex for me to date.
